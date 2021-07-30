@@ -15,8 +15,8 @@ function User(props) {
     setStatus([
       {
         menuItem: 'Today’s housework',
-        startDate: '2020 01 15',
-        endDate: '2020 01 15',
+        startDate: new Date(),
+        endDate: new Date(),
         user: '',
         name: '',
         sum: 0,
@@ -47,7 +47,7 @@ function User(props) {
   return (
     <div>
       <div className="user" style={{marginBottom: props.item.name==='Jack' ? '8%' : ''}}>
-        <div className={`user__avatar ${(props.item.name==='Jack') ? "user_pointer" : ""}`} onClick={() => setUserPass(!userPass)}>
+        <div className={`user__avatar ${(props.item.name==='Jack') ? "user_pointer" : ""}`} onClick={() => (props.item.name==='Jack') ? setUserPass(!userPass) : null}>
           <div className="user__avatar_size">
             <img className="user__avatar_img" src= {props.item.img} alt="avatar" />
           </div>
